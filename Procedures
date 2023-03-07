@@ -1,0 +1,33 @@
+Module circle
+    Private rad As Integer
+    Private area, perimeter As Double
+    Public Sub getdimension()
+        Console.WriteLine("Enter the radius")
+        rad = CInt(Console.ReadLine())
+
+    End Sub
+    Public Function computearea() As Double
+        area = Math.PI * Math.Pow(rad, 2)
+        Return area
+    End Function
+
+    Public Function computeperimeter() As Double
+        perimeter = Math.PI * rad * 2
+        Return perimeter
+    End Function
+
+    Public Sub print()
+        Console.WriteLine("Area= " & computearea())
+        Console.WriteLine("perimeter= " & computeperimeter())
+
+    End Sub
+End Module
+
+Module module1
+    Sub main()
+        getdimension()
+        print()
+        Console.ReadKey()
+
+    End Sub
+End Module
