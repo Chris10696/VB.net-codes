@@ -1,0 +1,44 @@
+Imports System.CodeDom
+
+Module Module1
+
+    Sub Main()
+        Dim cheapest As Double, expensive As Double
+        Dim total As Double, i As Integer
+        Dim cost(9) As Double '= {50.0, 10.0, 150.0, 10.0, 5.0, 86.0, 107.5, 300.0, 124.0, 36.0}
+        For i = LBound(cost) To UBound(cost) Step 1
+            Console.WriteLine("Enter The Cost of Item:" & (i + 1))
+            cost(i) = CDbl(Console.ReadLine())
+        Next
+        total = 0
+        For i = LBound(cost) To UBound(cost) Step 1
+            total = total + cost(i)
+        Next
+        Console.WriteLine("The cost of items = " & total)
+        cheapest = cost(0)
+        For i = LBound(cost) To UBound(cost) Step 1
+            If cost(i) < cheapest Then
+                cheapest = cost(i)
+            End If
+        Next
+
+        Console.WriteLine("Cheapest  = " & cheapest)
+
+        Array.Sort(cost)
+        For i = LBound(cost) To UBound(cost)
+            Console.WriteLine(cost(i))
+        Next
+        Array.Reverse(cost)
+        For i = LBound(cost) To UBound(cost)
+            Console.WriteLine(cost(i))
+        Next
+
+
+
+
+
+
+
+    End Sub
+
+End Module
