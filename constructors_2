@@ -1,0 +1,51 @@
+Public Class circle
+    Private rad As Integer
+    Private area, perimeter As Double
+    Public Sub New()
+        Console.Writeline("OBject has been created")
+        rad =7
+    End Sub
+    Public Sub New(Byval r As Integer)
+        rad =r
+        End Sub
+    Public Sub getdimension()
+        Console.WriteLine("Enter the radius")
+        rad = CInt(Console.ReadLine())
+
+    End Sub
+    Public Function computearea() As Double
+        area = Math.PI * Math.Pow(rad, 2)
+        Return area
+    End Function
+
+    Public Function computeperimeter() As Double
+        perimeter = Math.PI * rad * 2
+        Return perimeter
+    End Function
+
+    Public Sub print()
+        Console.WriteLine("Area= " & computearea())
+        Console.WriteLine("perimeter= " & computeperimeter())
+
+    End Sub
+End Class
+
+Module module1
+    Sub main()
+        Dim cir1 As circle = new circle()
+        Dim cir2 As circle = new circle(10)
+        
+        cir1.print()
+        cir2.print()
+        
+        cir1.getdimension()
+        cir2.getdimension()
+
+        
+        cir1.print()
+        cir2.print()
+
+        Console.ReadKey()
+
+    End Sub
+End Module  
